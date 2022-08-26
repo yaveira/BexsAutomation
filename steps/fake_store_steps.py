@@ -37,3 +37,22 @@ def step_impl(context, nome_produto, valor_produto):
                     assert_that(float(valor_produto), equal_to(lista_produtos[i]['price']))
      else:
           raise AssertionError('Name and value is not present')
+
+
+@step(u'eu realizo o cadastro de um produto')
+def step_impl(context):
+    context.lista_produtos = FakeApi.criar_produto(context)
+
+
+@step(u'validar os dados do produto cadastro')
+def step_impl(context):
+#     context.lista_produtos2 = FakeApi.consultar_produto(context)
+     pass
+
+
+@step(u'validar o id do produto')
+def step_impl(context):
+     lista_produtos = loads(context.lista_produtos.text)
+     quantidade_itens_na_lista = len(loads(FakeApi.consultar_produto(context).text)) + 1
+
+     assert_that(quantidade_itens_na_lista, equal_to(lista_produtos['id']))
