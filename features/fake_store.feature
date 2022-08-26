@@ -45,5 +45,6 @@ Scenario Outline: Criar produto
     And validar o id do produto
 
     Examples:
-        | title | price | description | image | category |
-        | carro | 80000 | carro palio | teste | veiculos |
+        | title          | price  | description              | image                  | category  |
+        | carro          | 8000.8 | carro palio              | teste                  | veiculos  |
+        | iphone 12 64GB | 5000.5 | Iphone 12 64GB cor preto | https: //i.pravatar.cc | celulares |
