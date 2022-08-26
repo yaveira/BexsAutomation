@@ -9,21 +9,6 @@ def step_impl(context):
      pass
 
 
-@step(u'eu realizo o cadastro')
-def step_impl(context):
-     FakeApi.criar_produto(context)
-
-
-@step(u'devo visualizar o status code 200')
-def step_impl(context):
-     pass
-
-
-@step(u'o id do produto cadastrado')
-def step_impl(context):
-     pass
-
-
 @step(u'eu consulto todos os produtos')
 def step_impl(context):
      context.lista_produtos = FakeApi.consultar_produto(context)
