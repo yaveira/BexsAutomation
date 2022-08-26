@@ -17,20 +17,18 @@ class FakeApi:
         }
 
         body_content = {
-            "title": "iphone 12 64GB",
-            "price": 5000.5,
-            "description": "Iphone 12 64GB cor preto",
-            "image": "https: //i.pravatar.cc",
-            "category": "celulares"
+            "title": f"{self._root['active_outline'][0]}",
+            "price": float(self._root['active_outline'][1]),
+            "description": f"{self._root['active_outline'][2]}",
+            "image": f"{self._root['active_outline'][3]}",
+            "category": f"{self._root['active_outline'][4]}"
         }
 
-        self.response = requests.post(url=request_url, headers_content=headers_content, body=body_content)
-        a = json.loads(self.response.text)
-        return self.response
+        self.response = requests.post(url=request_url, data=headers_content, json=body_content)
+        return self.response, body_content
 
     def consultar_produto(self):
         request_url = urljoin(URL_FAKEAPI, API_CONSULT)
 
         self.response = requests.get(url=request_url)
-        a = json.loads(self.response.text)
-        return self.response
+        return self.response, self.response
