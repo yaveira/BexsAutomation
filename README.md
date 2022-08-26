@@ -2,7 +2,7 @@
 Project to testing a Fake API
 
 
-#### Config the project
+# Config the project
 Environment
 ======
 Create a virtual environment to installing dependencies of the project
