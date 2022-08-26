@@ -5,7 +5,7 @@ Feature: Product manager
 Background: Background name
     Given que eu acesso a API de Produtos
 
-@test @wip
+@test
 Scenario Outline: Consultar produtos
     When eu consulto todos os produtos
     Then devo visualizar o status code <status_code>
@@ -14,15 +14,22 @@ Scenario Outline: Consultar produtos
     And validar a quantidade de produtos igual a <quantidade_produto>
         | quantidade_produto |
         | 20                 |
-    And validar o produto <nome_produto> com o valor <valor_produto>
+    And validar o produto "<nome_produto>" com o valor "<valor_produto>"
 
     Examples:
         | nome_produto                                          | valor_produto |
-        | SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s   | Value 2       |
+        | SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s   | 109           |
 
 
-@test
-Scenario: Criar produto
-    When eu realizo o cadastro
-    Then devo visualizar o status code 200
-    And o id do produto cadastrado
+@test @wip
+Scenario Outline: Criar produto
+    When eu realizo o cadastro de um produto
+    Then devo visualizar o status code <status_code>
+        | status_code |
+        | 200         |
+    And validar os dados do produto cadastro
+    And validar o id do produto
+
+    Examples:
+        | title | price | description | image | category |
+        | carro | 80000 | carro palio | teste | veiculos |
