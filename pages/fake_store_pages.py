@@ -32,5 +32,4 @@ class FakeApi:
         request_url = urljoin(URL_FAKEAPI, API_CONSULT)
 
         self.response = requests.get(url=request_url)
-        a = json.loads(self.response.text)
         return self.response
