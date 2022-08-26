@@ -25,10 +25,10 @@ class FakeApi:
         }
 
         self.response = requests.post(url=request_url, data=headers_content, json=body_content)
-        return self.response
+        return self.response, body_content
 
     def consultar_produto(self):
         request_url = urljoin(URL_FAKEAPI, API_CONSULT)
 
         self.response = requests.get(url=request_url)
-        return self.response
+        return self.response, self.response
