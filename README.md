@@ -1,46 +1,32 @@
-# BexsAutomation
-Project to testing a Fake API
+# Bexs Automation
+A example of testing framework for APIs.
 
-
-# Config the project
-Environment
-======
+## Configuration
 Create a virtual environment to installing dependencies of the project
+```bash
+python -m venv venv
+```
 
-    python -m venv venv
+Activate the virtual environment
+```bash
+.\venv\Scripts\activate
+```
 
-#### Behave Python API Testing
+## Installation
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies.
+```bash
+pip install -r requirements.txt
+```
 
+## Usage
+```python
+# Behave
+behave .\features\
 
-Tag
-======
-Use tags in feature files to indicate feature.
+# Use tag "@test" to indicate a completed test.
+# Use tag "@wip" to indicate that Feature or Scenario is in development.
+behave .\features\ -t "@tag_name"
+```
 
-    @test
-
-These tag will be used to indicate that BDD is in development.
-
-    @wip
-
-###### Example to run
-
-    behave features/back_antecipation_duplicates -t @test
-
-
-#### Allure Manual
-======
-1. First test run
-
-        behave features/back_bank_accounts.features -t @authenticity -f allure_behave.formatter:AllureFormatter -o allure/results
-    
-2. Generate report for first test run
-
-        allure generate allure/results/ -o allure/reports --clean
-        
-3. Remove old files
-
-        rm -r allure/results
-  
-4. Open Allure Report
-
-        allure open allure/reports
+## Documents
+[Behave](https://behave.readthedocs.io/en/latest/index.html)
