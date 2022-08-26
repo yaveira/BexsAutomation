@@ -44,10 +44,29 @@ def step_impl(context):
     context.lista_produtos = FakeApi.criar_produto(context)
 
 
-@step(u'validar os dados do produto cadastro')
+@then(u'validar o "title" do produto cadastro')
 def step_impl(context):
-#     context.lista_produtos2 = FakeApi.consultar_produto(context)
-     pass
+    assert_that(context.table[0]['title'], equal_to(context._root['active_outline'][0]))
+
+
+@then(u'validar o "price" do produto cadastro')
+def step_impl(context):
+    assert_that(context.table[0]['price'], equal_to(context._root['active_outline'][1]))
+
+
+@then(u'validar o "description" do produto cadastro')
+def step_impl(context):
+    assert_that(context.table[0]['description'], equal_to(context._root['active_outline'][2]))
+
+
+@then(u'validar o "image" do produto cadastro')
+def step_impl(context):
+    assert_that(context.table[0]['image'], equal_to(context._root['active_outline'][3]))
+
+
+@then(u'validar o "category" do produto cadastro')
+def step_impl(context):
+    assert_that(context.table[0]['category'], equal_to(context._root['active_outline'][4]))
 
 
 @step(u'validar o id do produto')

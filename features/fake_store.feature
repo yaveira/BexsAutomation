@@ -27,7 +27,21 @@ Scenario Outline: Criar produto
     Then devo visualizar o status code <status_code>
         | status_code |
         | 200         |
-    And validar os dados do produto cadastro
+    And validar o "title" do produto cadastro
+        | title   |
+        | <title> |
+    And validar o "price" do produto cadastro
+        | price   |
+        | <price> |
+    And validar o "description" do produto cadastro
+        | description   |
+        | <description> |
+    And validar o "image" do produto cadastro
+        | image   |
+        | <image> |
+    And validar o "category" do produto cadastro
+        | category   |
+        | <category> |
     And validar o id do produto
 
     Examples:

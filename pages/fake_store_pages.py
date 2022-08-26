@@ -21,16 +21,6 @@ class FakeApi:
             "price": float(self._root['active_outline'][1]),
             "description": f"{self._root['active_outline'][2]}",
             "image": f"{self._root['active_outline'][3]}",
-            "category": f"{self._root['active_outline'][4]}",
-            "title": f"{self._root['active_outline'][0]}",
-            "price": float(self._root['active_outline'][1]),
-            "description": f"{self._root['active_outline'][2]}",
-            "image": f"{self._root['active_outline'][3]}",
-            "category": f"{self._root['active_outline'][4]}",
-            "title": f"{self._root['active_outline'][0]}",
-            "price": float(self._root['active_outline'][1]),
-            "description": f"{self._root['active_outline'][2]}",
-            "image": f"{self._root['active_outline'][3]}",
             "category": f"{self._root['active_outline'][4]}"
         }
 
