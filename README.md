@@ -1,5 +1,5 @@
-# Bexs Automation
-A example of testing framework for APIs.
+# Framework of APIs Testing
+A example of testing framework for APIs using [Python](https://www.python.org/downloads/) 3.10.6 and [Behave](https://behave.readthedocs.io/en/stable/).
 
 ## Configuration
 Create a virtual environment to installing dependencies of the project
@@ -27,6 +27,3 @@ behave .\features\
 # Use tag "@wip" to indicate that Feature or Scenario is in development.
 behave .\features\ -t "@tag_name"
 ```
-
-## Documents
-[Behave](https://behave.readthedocs.io/en/latest/index.html)
