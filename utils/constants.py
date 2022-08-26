@@ -1,3 +1,3 @@
 URL_FAKEAPI = 'https://fakestoreapi.com/'
-API_CREATE = 'products'
-API_CONSULT = 'products/'
+ENDPOINT_CREATE = 'products'
+ENDPOINT_CONSULT = 'products/'
